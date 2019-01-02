@@ -1,0 +1,13 @@
+language: python
+python:
+  - "3.6"
+cache:
+  directories:
+    - node_modules
+before_install:
+  - npm install
+script:
+  - pip install pre-commit
+  - npm install -g prettier@1.13.7
+  - pre-commit run -a
+  - npm run build

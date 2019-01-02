@@ -1,0 +1,22 @@
+repos:
+- repo: https://github.com/awebdeveloper/pre-commit-prettier
+  rev: v0.0.1
+  hooks:
+  - id: prettier
+    files: \.(css|less|scss|json|md)$
+    args: ['--write']
+- repo: https://github.com/pre-commit/mirrors-eslint
+  rev: v5.11.1
+  hooks:
+  - id: eslint
+    args: ['--fix', 'src/**/*.{js,vue}']
+    additional_dependencies:
+      - 'eslint@4.19.1'
+      - 'babel-eslint'
+      - 'eslint-loader'
+      - 'eslint-plugin-import'
+      - 'eslint-plugin-node'
+      - 'eslint-plugin-promise'
+      - 'eslint-plugin-vue'
+      - 'eslint-plugin-standard'
+      - 'eslint-config-standard@12.0.0-alpha.0'
